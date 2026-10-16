@@ -1,5 +1,6 @@
 // EDIT HERE: agency details, projects, links and recognition gallery.
 window.CONTENT = {
+  "showRecognition": false,
   "brand": "ORBITAL",
   "email": "rounakpro18@gmail.com",
   "phone": "9322942635",

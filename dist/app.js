@@ -1,4 +1,7 @@
 const C=window.CONTENT,$=s=>document.querySelector(s),reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+// Inert template avoids rendering the disabled section or creating its image elements.
+const recognitionTemplate=$('#recognition-template');
+if(C.showRecognition){recognitionTemplate.replaceWith(recognitionTemplate.content.cloneNode(true))}else{recognitionTemplate.remove();document.querySelectorAll('a[href="#recognition"]').forEach(link=>link.remove())}
 function imageAttrs(src,sizes){const m=C.media?.[src];return m?`width="${m.width}" height="${m.height}" srcset="${m.srcset}" sizes="${sizes}" decoding="async"`:'decoding="async"'}
 document.querySelectorAll('[data-brand]').forEach(el=>el.textContent=C.brand);document.title=`${C.brand} — Ideas deserve a bigger orbit`;
 for(const [id,value] of Object.entries({'tagline':C.tagline,'intro':C.intro,'work-title':C.workTitle,'work-intro':C.workIntro,'global-title':C.globalTitle,'global-intro':C.globalIntro,'contact-title':C.contactTitle,'contact-intro':C.contactIntro}))$('#'+id).textContent=value;
@@ -69,4 +72,7 @@ enquiry.addEventListener('submit',async e=>{
  }finally{clearTimeout(timeout);b.disabled=false;b.innerHTML='Send project enquiry <span>↗</span>';form.removeAttribute('aria-busy')}
 });
 
+if(C.showRecognition){
 $('#gallery-title').textContent=C.galleryTitle;$('#gallery-intro').textContent=C.galleryIntro;C.gallery.forEach((item,i)=>{const a=document.createElement('figure');a.className='award';const visual=document.createElement('div');visual.className='award-image';if(item.image){const img=document.createElement('img');img.src=item.image;img.alt=item.caption;img.loading='lazy';img.decoding='async';const m=C.media?.[item.image];if(m){img.width=m.width;img.height=m.height;img.srcset=m.srcset;img.sizes='(max-width: 600px) 90vw, 43vw'}visual.append(img)}else{const span=document.createElement('span');span.className='award-symbol';span.textContent=i===0?'✳':'↗';visual.append(span);const note=document.createElement('small');note.textContent='PHOTOGRAPH COMING SOON';visual.append(note)}const cap=document.createElement('figcaption'),h=document.createElement('h3'),p=document.createElement('p');h.textContent=item.title;p.textContent=item.caption;cap.append(h,p);a.append(visual,cap);$('#award-gallery').append(a)});
+
+}
