@@ -118,7 +118,6 @@ window.CONTENT = {
       "image": "assets/beauty-salon-1-1600w-f6f0d1bc2f.webp",
       "images": [
         "assets/beauty-salon-1-1600w-f6f0d1bc2f.webp",
-        "assets/beauty-salon-2-2w-880ac2e7af.webp",
         "assets/beauty-salon-3-1600w-4286549119.webp",
         "assets/beauty-salon-4-1600w-65dc960b4d.webp",
         "assets/beauty-salon-5-1600w-c37e20731f.webp",
