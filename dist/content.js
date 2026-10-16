@@ -210,6 +210,44 @@ window.CONTENT = {
       "description": "A digital foundation for a construction business. Services, completed work, and company information give prospective clients a clearer view of the team behind the build.",
       "details": "A business website presenting residential construction, commercial buildings, renovations, and project management, alongside company, founder, project, gallery, and contact sections.",
       "url": null
+    },
+    {
+      "title": "StyleStack",
+      "type": "Mobile app",
+      "sector": "AI & lifestyle",
+      "place": "",
+      "color": "#c9dcd4",
+      "image": "assets/stylestack-1-1242w-434c87f31a.webp",
+      "images": [
+        "assets/stylestack-1-1242w-434c87f31a.webp",
+        "assets/stylestack-2-1242w-38597dc61b.webp",
+        "assets/stylestack-3-1242w-5451329838.webp",
+        "assets/stylestack-4-1242w-a0283d4074.webp",
+        "assets/stylestack-5-1242w-a55ddc8659.webp",
+        "assets/stylestack-6-1242w-d023851b98.webp",
+        "assets/stylestack-7-1242w-9fbe995024.webp"
+      ],
+      "description": "Your wardrobe, intelligently styled. StyleStack turns the clothes you own into daily outfit ideas, tailored to your taste, the weather, and your plans.",
+      "details": "An AI-powered digital wardrobe with personalized outfit recommendations, a mix-and-match Style Canvas, and outfit planning. Optional calendar and Gmail integrations help connect your wardrobe with your day.",
+      "url": "https://apps.apple.com/in/app/stylestack-your-fashion-ai/id6796359015",
+      "linkLabel": "View on App Store",
+      "links": [
+        {
+          "url": "https://apps.apple.com/in/app/stylestack-your-fashion-ai/id6796359015",
+          "label": "View on App Store"
+        },
+        {
+          "url": "https://play.google.com/store/apps/details?id=com.stylestack.stylestack",
+          "label": "View on Google Play"
+        }
+      ],
+      "cover": {
+        "theme": "stylestack",
+        "label": "YOUR PERSONAL AI STYLIST",
+        "title": "Your wardrobe. Reimagined.",
+        "subtitle": "StyleStack",
+        "note": "YOUR CLOTHES. FRESH POSSIBILITIES."
+      }
     }
   ],
   "media": {
@@ -447,6 +485,41 @@ window.CONTENT = {
       "width": 1600,
       "height": 909,
       "srcset": "assets/siddharth-constructions-4-640w-2f8d08a060.webp 640w, assets/siddharth-constructions-4-1280w-8d453c5bfb.webp 1280w, assets/siddharth-constructions-4-1600w-5051a6382b.webp 1600w"
+    },
+    "assets/stylestack-1-1242w-434c87f31a.webp": {
+      "width": 1242,
+      "height": 2688,
+      "srcset": "assets/stylestack-1-640w-f23eb8a017.webp 640w, assets/stylestack-1-1242w-434c87f31a.webp 1242w"
+    },
+    "assets/stylestack-2-1242w-38597dc61b.webp": {
+      "width": 1242,
+      "height": 2688,
+      "srcset": "assets/stylestack-2-640w-74299a8978.webp 640w, assets/stylestack-2-1242w-38597dc61b.webp 1242w"
+    },
+    "assets/stylestack-3-1242w-5451329838.webp": {
+      "width": 1242,
+      "height": 2688,
+      "srcset": "assets/stylestack-3-640w-886284c11c.webp 640w, assets/stylestack-3-1242w-5451329838.webp 1242w"
+    },
+    "assets/stylestack-4-1242w-a0283d4074.webp": {
+      "width": 1242,
+      "height": 2688,
+      "srcset": "assets/stylestack-4-640w-92be77b6c5.webp 640w, assets/stylestack-4-1242w-a0283d4074.webp 1242w"
+    },
+    "assets/stylestack-5-1242w-a55ddc8659.webp": {
+      "width": 1242,
+      "height": 2688,
+      "srcset": "assets/stylestack-5-640w-ad55f36d74.webp 640w, assets/stylestack-5-1242w-a55ddc8659.webp 1242w"
+    },
+    "assets/stylestack-6-1242w-d023851b98.webp": {
+      "width": 1242,
+      "height": 2688,
+      "srcset": "assets/stylestack-6-640w-3b19edf39a.webp 640w, assets/stylestack-6-1242w-d023851b98.webp 1242w"
+    },
+    "assets/stylestack-7-1242w-9fbe995024.webp": {
+      "width": 1242,
+      "height": 2688,
+      "srcset": "assets/stylestack-7-640w-e2dfc1f70c.webp 640w, assets/stylestack-7-1242w-9fbe995024.webp 1242w"
     }
   }
 };
