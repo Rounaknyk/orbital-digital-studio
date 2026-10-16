@@ -529,5 +529,10 @@ window.CONTENT = {
     "socialImage": "/social-preview-v2.png",
     "socialImageAlt": "ORBITAL digital studio — distinctive websites and mobile apps, with a preview of the studio website."
   },
-  "logo": "assets/orbital-logo-v1.png"
+  "logo": "assets/orbital-logo-v1.png",
+  "whatsapp": {
+    "number": "919322942635",
+    "message": "Hi ORBITAL! I’d like to discuss a website or mobile app project.",
+    "label": "Chat on WhatsApp"
+  }
 };
