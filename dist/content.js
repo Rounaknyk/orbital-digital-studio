@@ -41,6 +41,11 @@ window.CONTENT = {
     ],
     [
       "03",
+      "AI or Automation",
+      "Put repetitive work on autopilot with practical AI tools, connected workflows, and automations built around your business."
+    ],
+    [
+      "04",
       "From idea to launch",
       "A clear path from discovery and design through development, testing, and launch. One partner, from the first conversation."
     ]
@@ -533,5 +538,23 @@ window.CONTENT = {
     "number": "919322942635",
     "message": "Hi ORBITAL! I’d like to discuss a website or mobile app project.",
     "label": "Chat on WhatsApp"
-  }
+  },
+  "enquiryServices": [
+    {
+      "value": "Website",
+      "label": "A website"
+    },
+    {
+      "value": "Mobile app",
+      "label": "A mobile app"
+    },
+    {
+      "value": "AI or Automation",
+      "label": "AI or Automation"
+    },
+    {
+      "value": "Something else",
+      "label": "Something else"
+    }
+  ]
 };
