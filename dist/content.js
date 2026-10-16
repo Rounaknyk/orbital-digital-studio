@@ -525,8 +525,8 @@ window.CONTENT = {
   "seo": {
     "title": "ORBITAL | Website & Mobile App Development Studio",
     "description": "Distinctive websites and intuitive mobile apps, built from idea to launch. Explore ORBITAL’s work and start your next digital project with our independent studio.",
-    "siteUrl": "https://orbital-digital-studio.rounakpro18.chatgpt.site",
-    "socialImage": "/social-preview-v1.png",
+    "siteUrl": "https://orbital-digital-studio.vercel.app",
+    "socialImage": "/social-preview-v2.png",
     "socialImageAlt": "ORBITAL digital studio — distinctive websites and mobile apps, with a preview of the studio website."
   },
   "logo": "assets/orbital-logo-v1.png"
