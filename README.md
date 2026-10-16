@@ -16,8 +16,16 @@ Images are WebP with responsive variants, declared dimensions, and hashed names 
 
 Edit `dist/content.js` as before. Optional `media` metadata maps each full image URL to its width, height and responsive srcset. Ordinary new image URLs work without metadata. Retain only compressed production assets in `dist/assets/`.
 
-After editing app.js or style.css, run `node scripts/prepare.mjs` to refresh fingerprinted files. Content edits need no build.
+After editing app.js or style.css, run `node scripts/prepare.mjs` to refresh fingerprinted files. After content edits, run the same preparation command to refresh SEO metadata and the content cache version.
 
 Cloudflare Pages: upload the `dist` folder for a Direct Upload project, or connect this source repository with build command `node scripts/prepare.mjs` and output directory `dist`. `_headers` sets immutable caching for hashed assets and revalidation for editable content. A Cloudflare account connection/deployment is not included in the current Sites publication.
 
 Vercel: `vercel.json` supplies the same asset cache policy and dist output directory. Its commercial plan requirements still apply. Neither this website nor its images need Supabase.
+
+## Brand and search metadata
+
+The generated ORBITAL mark appears in the header/footer, PNG and ICO favicons, Apple touch icon, and manifest icons. `dist/social-preview-v1.png` is a 1200 × 630 homepage screenshot for shared links.
+
+Edit `seo.title`, `seo.description`, `seo.siteUrl`, and `seo.socialImage` in `dist/content.js`, then run `node scripts/prepare.mjs`. You can also override the canonical origin at build time with `SITE_URL=https://your-domain.example`. Change the origin when deploying to a public custom domain so canonical URLs, Open Graph URLs, robots.txt, and sitemap.xml agree.
+
+The build writes crawler-visible title, description, canonical, Open Graph, Twitter card, Organization/WebSite structured data, robots.txt, and sitemap.xml. Search rankings and third-party preview refresh times are not guaranteed. The current private Sites deployment requires sign-in, which prevents anonymous search/social crawlers from reliably fetching it. A public deployment is needed for normal indexing and link previews.

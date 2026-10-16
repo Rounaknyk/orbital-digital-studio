@@ -1,4 +1,4 @@
-// EDIT HERE: agency details, projects, links and recognition gallery.
+// EDIT HERE: agency details, SEO, projects, links and recognition gallery.
 window.CONTENT = {
   "showRecognition": false,
   "brand": "ORBITAL",
@@ -521,5 +521,13 @@ window.CONTENT = {
       "height": 2688,
       "srcset": "assets/stylestack-7-640w-e2dfc1f70c.webp 640w, assets/stylestack-7-1242w-9fbe995024.webp 1242w"
     }
-  }
+  },
+  "seo": {
+    "title": "ORBITAL | Website & Mobile App Development Studio",
+    "description": "Distinctive websites and intuitive mobile apps, built from idea to launch. Explore ORBITAL’s work and start your next digital project with our independent studio.",
+    "siteUrl": "https://orbital-digital-studio.rounakpro18.chatgpt.site",
+    "socialImage": "/social-preview-v1.png",
+    "socialImageAlt": "ORBITAL digital studio — distinctive websites and mobile apps, with a preview of the studio website."
+  },
+  "logo": "assets/orbital-logo-v1.png"
 };
