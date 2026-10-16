@@ -43,6 +43,29 @@ function tick(t){globeFrame=0;if(!globeVisible||document.hidden||reduced)return;
 function syncGlobe(){if(globeFrame)cancelAnimationFrame(globeFrame);globeFrame=0;if(globeVisible&&!document.hidden){draw();if(!reduced)globeFrame=requestAnimationFrame(tick)}}
 new IntersectionObserver(entries=>{globeVisible=entries[0].isIntersecting;syncGlobe()},{rootMargin:'100px'}).observe(canvas);
 document.addEventListener('visibilitychange',syncGlobe);addEventListener('resize',()=>{if(globeVisible&&!document.hidden)draw()});
-$('#enquiry').addEventListener('submit',async e=>{e.preventDefault();const form=e.target,b=form.querySelector('button'),data=Object.fromEntries(new FormData(form));b.disabled=true;b.textContent='Sending…';$('#form-status').textContent='Sending your project brief…';try{const response=await fetch('https://formsubmit.co/ajax/'+encodeURIComponent(C.email),{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({...data,_subject:`${C.brand}: ${data.service} enquiry from ${data.name}`,_template:'table',_replyto:data.email})});const result=await response.json();if(!response.ok||result.success===false||result.success==='false')throw Error('Delivery unavailable');$('#form-status').textContent='Enquiry submitted. Thank you — we look forward to hearing more. If this is the first submission, the studio must activate its email service before delivery.';form.reset()}catch{$('#form-status').replaceChildren(document.createTextNode('The form could not send. Please email your brief directly: '));const a=document.createElement('a');a.href=`mailto:${C.email}?subject=${encodeURIComponent(C.brand+' project enquiry')}&body=${encodeURIComponent(`Name: ${data.name}\nEmail: ${data.email}\nService: ${data.service}\n\n${data.message}`)}`;a.textContent=C.email;$('#form-status').append(a)}finally{b.disabled=false;b.innerHTML='Send project enquiry <span>↗</span>'}});
+let toastTimer;
+function showToast(message,kind='success'){
+ const toast=$('#form-toast');clearTimeout(toastTimer);toast.dataset.kind=kind;toast.textContent=message;toast.hidden=false;
+ toastTimer=setTimeout(()=>{toast.hidden=true},3000);
+}
+const enquiry=$('#enquiry'),status=$('#form-status');
+enquiry.addEventListener('invalid',()=>{status.textContent='Please complete the required fields and enter a valid email address. Your project description needs at least 10 characters.';showToast('Please check the required form fields.','error')},true);
+enquiry.addEventListener('submit',async e=>{
+ e.preventDefault();const form=e.target,b=form.querySelector('.submit'),data=Object.fromEntries(new FormData(form));
+ if(b.disabled)return;
+ b.disabled=true;b.textContent='Sending…';form.setAttribute('aria-busy','true');status.textContent='Sending your project enquiry…';
+ const controller=new AbortController(),timeout=setTimeout(()=>controller.abort(),15000);
+ try{
+  const response=await fetch('https://formsubmit.co/ajax/'+encodeURIComponent(C.email),{method:'POST',signal:controller.signal,headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({...data,_subject:`${C.brand}: ${data.service} enquiry from ${data.name}`,_template:'table',_replyto:data.email})});
+  const result=await response.json();
+  if(!response.ok||!(result.success===true||result.success==='true'))throw Error('The email service did not confirm acceptance.');
+  status.textContent='Your enquiry was submitted successfully. Thank you for getting in touch!';
+  showToast('✓ Project enquiry submitted successfully!');form.reset();
+ }catch(error){
+  const message=error.name==='AbortError'?'We couldn’t confirm your submission. Please email us directly.':'Your enquiry could not be sent. Please try again or email us directly.';
+  status.replaceChildren(document.createTextNode(message+' '));
+  const a=document.createElement('a');a.href=`mailto:${C.email}?subject=${encodeURIComponent(C.brand+' project enquiry')}&body=${encodeURIComponent(`Name: ${data.name}\nEmail: ${data.email}\nService: ${data.service}\n\n${data.message}`)}`;a.textContent=C.email;status.append(a);showToast(message,'error');
+ }finally{clearTimeout(timeout);b.disabled=false;b.innerHTML='Send project enquiry <span>↗</span>';form.removeAttribute('aria-busy')}
+});
 
 $('#gallery-title').textContent=C.galleryTitle;$('#gallery-intro').textContent=C.galleryIntro;C.gallery.forEach((item,i)=>{const a=document.createElement('figure');a.className='award';const visual=document.createElement('div');visual.className='award-image';if(item.image){const img=document.createElement('img');img.src=item.image;img.alt=item.caption;img.loading='lazy';img.decoding='async';const m=C.media?.[item.image];if(m){img.width=m.width;img.height=m.height;img.srcset=m.srcset;img.sizes='(max-width: 600px) 90vw, 43vw'}visual.append(img)}else{const span=document.createElement('span');span.className='award-symbol';span.textContent=i===0?'✳':'↗';visual.append(span);const note=document.createElement('small');note.textContent='PHOTOGRAPH COMING SOON';visual.append(note)}const cap=document.createElement('figcaption'),h=document.createElement('h3'),p=document.createElement('p');h.textContent=item.title;p.textContent=item.caption;cap.append(h,p);a.append(visual,cap);$('#award-gallery').append(a)});
