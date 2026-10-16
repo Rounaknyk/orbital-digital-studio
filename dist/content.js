@@ -1,5 +1,4 @@
 // EDIT HERE: agency details, projects, links and recognition gallery.
-// media stores optional responsive image metadata. New ordinary image URLs also work.
 window.CONTENT = {
   "brand": "ORBITAL",
   "email": "rounakpro18@gmail.com",
@@ -154,7 +153,15 @@ window.CONTENT = {
       "description": "A connected dental-care experience for patients and practitioners. Appointments, treatment information, and communication come together in one mobile platform.",
       "details": "Patients can manage appointments, receive reminders, view treatment plans and billing, and access oral-care resources. Doctors can organise patient records, treatment plans, virtual prescriptions, and remote communication.",
       "url": "https://play.google.com/store/apps/details?id=com.gds.goa_dental_clinic",
-      "linkLabel": "View on Google Play"
+      "linkLabel": "View on Google Play",
+      "cover": {
+        "theme": "dental",
+        "label": "CONNECTED DENTAL CARE",
+        "title": "Care, connected.",
+        "subtitle": "Goa Dental Solutions",
+        "symbol": "✚",
+        "note": "PATIENTS × PRACTITIONERS"
+      }
     },
     {
       "title": "Peck",
@@ -175,7 +182,15 @@ window.CONTENT = {
       ],
       "description": "A mobile dating experience designed to help people discover new connections. A playful identity brings a human touch to the search for someone new.",
       "details": "A dating app project centred on an approachable mobile experience. Previously released; the app is no longer publicly available.",
-      "url": null
+      "url": null,
+      "cover": {
+        "theme": "peck",
+        "label": "A LITTLE SPARK. A REAL CONNECTION.",
+        "title": "Meet your spark.",
+        "subtitle": "Peck",
+        "symbol": "♥",
+        "note": "MADE FOR NEW CONNECTIONS"
+      }
     },
     {
       "title": "Siddharth Constructions",
