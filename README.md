@@ -29,3 +29,17 @@ The generated ORBITAL mark appears in the header/footer, PNG and ICO favicons, A
 Edit `seo.title`, `seo.description`, `seo.siteUrl`, and `seo.socialImage` in `dist/content.js`, then run `node scripts/prepare.mjs`. You can also override the canonical origin at build time with `SITE_URL=https://your-domain.example`. Change the origin when deploying to a public custom domain so canonical URLs, Open Graph URLs, robots.txt, and sitemap.xml agree.
 
 The build writes crawler-visible title, description, canonical, Open Graph, Twitter card, Organization/WebSite structured data, robots.txt, and sitemap.xml. Search rankings and third-party preview refresh times are not guaranteed. The current private Sites deployment requires sign-in, which prevents anonymous search/social crawlers from reliably fetching it. A public deployment is needed for normal indexing and link previews.
+
+## Search and AI discoverability
+
+`node scripts/prepare.mjs` now statically renders homepage content and generates the service, project, privacy and 404 pages from `dist/content.js`. `scripts/seo.mjs` owns these templates. Keep text, project slugs, service-page content, FAQ answers, privacy information, and verification values in the central content file. Slugs are public URLs; use explicit redirects when changing them.
+
+Run `node scripts/check-seo.mjs` after the build. Vercel runs both build and checks automatically. The checks validate one H1 and unique titles, description/canonical tags, JSON-LD, internal asset/page links, and key static content. They do not measure rankings, legal compliance, Core Web Vitals, or actual email delivery.
+
+The public sitemap lists canonical pages only. `/index.html` redirects to `/`; Vercel clean URLs normalize `.html` paths. A missing address uses the custom 404 page with a real 404 status (verify after deployment). No catch-all rewrite converts missing pages into 200 responses.
+
+Google Search Console: create a URL-prefix property for the public origin, obtain its HTML verification token, put it in `seo.googleVerification`, rebuild, deploy, verify the property, then submit `/sitemap.xml`. Bing Webmaster Tools has the corresponding `seo.bingVerification` field. Those values are public verification tokens, not passwords. Account verification and sitemap submission have not been completed automatically.
+
+Google Analytics is intentionally not installed: it is not an indexing requirement. If added later, use your own GA4 measurement ID, decide the relevant consent behavior, and update the privacy information. The form's actual inbox delivery still depends on FormSubmit activation; no real test enquiry was sent during SEO work.
+
+Search crawlers OAI-SearchBot and Claude-SearchBot are explicitly allowed, with normal content served identically to humans and bots. Existing wildcard crawler permissions are preserved; search-bot access and model-training access are separate choices. No hidden keywords, invented reviews, location pages, guaranteed recommendations, or AI ranking files are added.

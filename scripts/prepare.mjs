@@ -3,6 +3,7 @@ import {createHash} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 import path from 'node:path';
 import vm from 'node:vm';
+import {enhanceSite} from './seo.mjs';
 const root=fileURLToPath(new URL('../dist/',import.meta.url));
 let html=await readFile(path.join(root,'index.html'),'utf8');
 for(const name of ['app.js','style.css']){
@@ -57,5 +58,6 @@ html=html.replace(/(<h1 id="headline">)[\s\S]*?(<\/h1>)/,`$1${C.hero.map(t=>`<sp
 await writeFile(path.join(root,'site.webmanifest'),JSON.stringify({name:C.brand,short_name:C.brand,start_url:'/',display:'browser',background_color:'#f3f1e9',theme_color:'#ff5b30',icons:[{src:'/icon-192.png',sizes:'192x192',type:'image/png'},{src:'/icon-512.png',sizes:'512x512',type:'image/png'}]},null,2));
 await writeFile(path.join(root,'robots.txt'),`User-agent: *\nAllow: /\nSitemap: ${siteUrl}/sitemap.xml\n`);
 await writeFile(path.join(root,'sitemap.xml'),`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>${escape(siteUrl)}/</loc></url></urlset>`);
+html=await enhanceSite({html,C,root,siteUrl});
 await writeFile(path.join(root,'index.html'),html);
 console.log('Prepared fingerprinted CSS and JavaScript.');

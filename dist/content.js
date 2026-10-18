@@ -1,4 +1,4 @@
-// EDIT HERE: agency details, SEO, projects, links and recognition gallery.
+// EDIT HERE: agency details, SEO, services, FAQ, privacy, projects, and links.
 window.CONTENT = {
   "showRecognition": false,
   "brand": "ORBITAL",
@@ -112,7 +112,8 @@ window.CONTENT = {
       "description": "A confident digital presence for a platform developing, structuring, and financing complex real-asset projects. A clear narrative brings its capabilities, sectors, and project portfolio together.",
       "details": "Designed to make a complex business easy to explore, with dedicated capabilities and project sections, an event gallery, team profiles, and a direct enquiry flow.",
       "url": "https://www.blueimpact.solutions/",
-      "linkLabel": "Visit website"
+      "linkLabel": "Visit website",
+      "slug": "blue-impact-solutions"
     },
     {
       "title": "Smile Beauty Salon",
@@ -133,7 +134,8 @@ window.CONTENT = {
       "description": "A welcoming online introduction to a local beauty destination. Service menus, transparent pricing, and an easy-to-find location help visitors plan their next visit.",
       "details": "A tailored visual identity paired with service and pricing information, contact details, and a location map, designed around the salon’s personality.",
       "url": "https://smile-beauty-salon-kolhapur.web.app/",
-      "linkLabel": "Visit website"
+      "linkLabel": "Visit website",
+      "slug": "smile-beauty-salon"
     },
     {
       "title": "Goa Dental Solutions",
@@ -166,7 +168,8 @@ window.CONTENT = {
         "subtitle": "Goa Dental Solutions",
         "symbol": "✚",
         "note": "PATIENTS × PRACTITIONERS"
-      }
+      },
+      "slug": "goa-dental-solutions"
     },
     {
       "title": "Peck",
@@ -195,7 +198,8 @@ window.CONTENT = {
         "subtitle": "Peck",
         "symbol": "♥",
         "note": "MADE FOR NEW CONNECTIONS"
-      }
+      },
+      "slug": "peck"
     },
     {
       "title": "Siddharth Constructions",
@@ -213,7 +217,8 @@ window.CONTENT = {
       ],
       "description": "A digital foundation for a construction business. Services, completed work, and company information give prospective clients a clearer view of the team behind the build.",
       "details": "A business website presenting residential construction, commercial buildings, renovations, and project management, alongside company, founder, project, gallery, and contact sections.",
-      "url": null
+      "url": null,
+      "slug": "siddharth-constructions"
     },
     {
       "title": "StyleStack",
@@ -251,7 +256,8 @@ window.CONTENT = {
         "title": "Your wardrobe. Reimagined.",
         "subtitle": "StyleStack",
         "note": "YOUR CLOTHES. FRESH POSSIBILITIES."
-      }
+      },
+      "slug": "stylestack"
     }
   ],
   "media": {
@@ -527,11 +533,13 @@ window.CONTENT = {
     }
   },
   "seo": {
-    "title": "ORBITAL | Website & Mobile App Development Studio",
-    "description": "Distinctive websites and intuitive mobile apps, built from idea to launch. Explore ORBITAL’s work and start your next digital project with our independent studio.",
+    "title": "ORBITAL | Websites, Mobile Apps & AI Automation",
+    "description": "ORBITAL is an independent development studio in India building business websites, mobile apps, and AI automations for clients worldwide. Explore our work.",
     "siteUrl": "https://orbital-digital-studio.vercel.app",
     "socialImage": "/social-preview-v2.png",
-    "socialImageAlt": "ORBITAL digital studio — distinctive websites and mobile apps, with a preview of the studio website."
+    "socialImageAlt": "ORBITAL digital studio — distinctive websites and mobile apps, with a preview of the studio website.",
+    "googleVerification": "",
+    "bingVerification": ""
   },
   "logo": "assets/orbital-logo-v1.png",
   "whatsapp": {
@@ -556,5 +564,123 @@ window.CONTENT = {
       "value": "Something else",
       "label": "Something else"
     }
-  ]
+  ],
+  "servicePages": [
+    {
+      "slug": "website-development",
+      "name": "Website design & development",
+      "homepageTitle": "Websites with presence",
+      "description": "Custom business websites that make your services clear, showcase your work, and help visitors take the next step.",
+      "intro": "A business website should explain what you do, give people a reason to trust you, and make it easy to get in touch. ORBITAL brings design and development together to create websites shaped around those goals.",
+      "body": [
+        "We build responsive business websites and portfolios with clear content, project showcases, and useful contact flows. Visual direction and interactions are developed around your business rather than a one-size-fits-all layout.",
+        "The process starts with your audience, content, and priorities. We then work through the page structure, design, implementation, and launch checks, including mobile readability and the basics of search-friendly HTML."
+      ],
+      "deliverables": [
+        "Responsive layouts for phones, tablets, and desktops",
+        "Service pages, portfolios, and image galleries",
+        "Contact and enquiry flows",
+        "Launch checks for links, layout, and accessibility"
+      ],
+      "projects": [
+        "blue-impact-solutions",
+        "smile-beauty-salon",
+        "siddharth-constructions"
+      ]
+    },
+    {
+      "slug": "mobile-app-development",
+      "name": "Mobile app development",
+      "homepageTitle": "Apps with purpose",
+      "description": "Mobile app experiences built around real workflows, from digital wardrobes and social connections to appointments and patient communication.",
+      "intro": "Good mobile apps make a specific task simpler. ORBITAL develops mobile experiences with a focus on clear navigation, useful interactions, and the systems that support the people using them.",
+      "body": [
+        "The portfolio spans healthcare, social discovery, and AI-assisted wardrobe planning. Each project starts with the users and the workflow, then develops into screens and connected features.",
+        "Platform scope, integrations, release requirements, and maintenance expectations are agreed during discovery. Explore the app projects below to see supplied screenshots and links to available store listings."
+      ],
+      "deliverables": [
+        "User journeys and mobile interface design",
+        "Application development around an agreed feature scope",
+        "Backend and third-party integrations where needed",
+        "Testing and release preparation for the agreed platforms"
+      ],
+      "projects": [
+        "goa-dental-solutions",
+        "peck",
+        "stylestack"
+      ]
+    },
+    {
+      "slug": "ai-automation",
+      "name": "AI & workflow automation",
+      "homepageTitle": "AI or Automation",
+      "description": "Practical AI tools and connected workflows designed to reduce repetitive work and support the way your business operates.",
+      "intro": "AI is useful when it solves a clear problem. ORBITAL helps turn repetitive tasks and disconnected processes into focused tools and workflows, starting with the work your business actually needs to do.",
+      "body": [
+        "We begin by mapping the task, the information it needs, and the places where a person should remain in control. That defines a realistic scope for an automation or AI-assisted feature.",
+        "Depending on your requirements, the solution can connect existing services or introduce a focused application. Data access, failure handling, review steps, and ongoing service costs are discussed before implementation. StyleStack is an example of AI-assisted recommendations in the portfolio."
+      ],
+      "deliverables": [
+        "Workflow discovery and integration planning",
+        "AI-assisted features with a defined purpose",
+        "Connected tools and task automations",
+        "Human review steps and failure-handling considerations"
+      ],
+      "projects": [
+        "stylestack"
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What does ORBITAL build?",
+      "answer": "ORBITAL builds business websites, mobile apps, and practical AI or workflow automations. Services cover discovery, design, development, and launch preparation."
+    },
+    {
+      "question": "Where is ORBITAL based, and can we work remotely?",
+      "answer": "ORBITAL is based in India and works remotely with clients. Our client markets include the UAE, the Philippines, the USA, Europe, India, and Kenya."
+    },
+    {
+      "question": "Can I see examples of your work?",
+      "answer": "Yes. Explore the portfolio for project descriptions, screenshots, and links to available websites or app-store listings. Projects without an available public release have no external launch button."
+    },
+    {
+      "question": "How do you estimate cost and timeline?",
+      "answer": "Share the problem you want to solve, the features you need, and any target launch date. Scope, integrations, content, and platform requirements shape the estimate; there is no single fixed price or timeline for every project."
+    },
+    {
+      "question": "How do I start a project?",
+      "answer": "Use the enquiry form, email rounakpro18@gmail.com, or start a WhatsApp conversation on +91 9322942635. Tell us about your business and what you want to build."
+    }
+  ],
+  "privacy": {
+    "title": "Privacy information",
+    "updated": "2026-10-18",
+    "sections": [
+      {
+        "title": "Who operates this website",
+        "text": "ORBITAL is an independent digital development studio. Contact rounakpro18@gmail.com with questions about this website or an enquiry you have submitted."
+      },
+      {
+        "title": "Project enquiries",
+        "text": "The enquiry form collects your name, email address, selected service, and project message. It sends this information through FormSubmit to the studio’s Gmail inbox so we can respond and discuss your request. Do not include passwords, payment details, or sensitive personal records."
+      },
+      {
+        "title": "WhatsApp and external links",
+        "text": "The WhatsApp button opens WhatsApp with a prepared message. Clicking it does not automatically send that message. WhatsApp, app stores, and external project websites apply their own privacy policies when you visit them."
+      },
+      {
+        "title": "Hosting, fonts, and analytics",
+        "text": "Vercel hosts this public website and may process technical request data to deliver and protect the service. Google Fonts supplies the website fonts, so your browser contacts Google when loading them. This website currently includes no Google Analytics or advertising-pixel scripts."
+      },
+      {
+        "title": "Enquiry correspondence and your choices",
+        "text": "Your message is used to respond to your enquiry and any resulting project conversation. To request access, correction, or deletion of enquiry correspondence, email rounakpro18@gmail.com. We will review the request and any requirements to retain business correspondence."
+      },
+      {
+        "title": "Third-party services",
+        "text": "The contact form, email inbox, hosting, fonts, and messaging links involve third-party providers. Their policies govern their own processing. You can choose to contact the studio directly by email instead of using the form."
+      }
+    ]
+  }
 };

@@ -19,5 +19,15 @@
         }
       ]
     }
+  ],
+  "buildCommand": "node scripts/prepare.mjs && node scripts/check-seo.mjs",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "statusCode": 301
+    }
   ]
 }
