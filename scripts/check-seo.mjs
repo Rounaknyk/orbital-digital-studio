@@ -6,6 +6,7 @@ async function files(dir){const out=[];for(const n of await readdir(dir)){const 
 const pages=await files(root),errors=[],titles=new Set();
 const exists=async p=>{try{return (await stat(p)).isFile()}catch{return false}};
 for(const file of pages){const html=await readFile(file,'utf8'),label=path.relative(root,file),title=html.match(/<title>(.*?)<\/title>/s)?.[1];
+ if(/^google[a-f0-9]+\.html$/.test(label)){if(html.trim()!==`google-site-verification: ${label}`)errors.push(label+': invalid verification file');continue}
  if(!title||titles.has(title))errors.push(label+': missing or duplicate title');titles.add(title);
  if((html.match(/<h1\b/g)||[]).length!==1)errors.push(label+': expected one H1');
  if((html.match(/<meta name="description" /g)||[]).length!==1)errors.push(label+': description count');
